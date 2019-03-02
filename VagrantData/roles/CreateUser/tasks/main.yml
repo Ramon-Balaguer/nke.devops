@@ -1,0 +1,7 @@
+- name: Add sudoers users to wheel group
+  user:
+    name: "{{ item }}"
+    groups: wheel
+    append: yes
+  with_items: "{{ sudoers }}"
+  become: yes
